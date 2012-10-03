@@ -1,0 +1,140 @@
+/* app css stylesheet */
+/*body {
+  background: url('../image/bg_tile.png') repeat transparent;
+}*/
+.navbar-inner {
+  padding-left: 100px !important;
+}
+
+.social li {
+  margin: 5px 0px;
+}
+
+.table tbody tr.warning td {
+  background-color: #FCF8E3;
+}
+
+#container {
+  margin: 0px 100px;
+  padding-top: 40px;
+}
+
+.hint {
+  margin: 0px auto;
+  width: 210px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10000;
+}
+
+form input {
+  margin-right: 20px;
+}
+
+.prods {
+  width: 980px;
+  margin: 20px auto;
+}
+ 
+#logoSlots {
+  width: 980px;
+  height: 150px;
+  margin: 0px auto;
+}
+ 
+#logoSlots div {
+  float: left;
+  width: 110px;
+  height: 110px;
+  margin: 0px 60px;
+  padding: 20px auto;
+  border: 3px dashed;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+ 
+#logoPile {
+  margin: 0 auto;
+  background: #ffd;
+  width: 930px;
+  height: 120px;
+  padding: 20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+ 
+#logoPile div {
+  float: left;
+  width: 110px;
+  height: 110px;
+  border: 3px solid gray;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 35px;
+  font-size: 50px;
+  text-shadow: 0 0 3px #000;
+}
+ 
+#logoSlots div.hovered {
+  background: #aaa;
+}
+
+.ui-draggable-dragging {
+  z-index: 1;
+}
+
+.btnDiv {
+  margin: 10px auto;
+  width: 100px;
+}
+
+.lock {
+  margin: 0px auto;
+  width: 650px;
+}
+
+.lock .thumbnail {
+  height: 500px;
+}
+
+.rule,
+.match {
+  margin: 0px auto;
+  width: 800px;
+}
+
+.numPile span {
+  margin-left: 15px;
+}
+
+.badge {
+  font-size: 80px !important;
+  line-height: 90px !important;
+}
+
+.robotBtnDiv {
+  margin: 10px auto;
+  width: 200px;
+}
+
+.robotBtnDiv a {
+  margin-right: 20px;
+}
+
+.cloudBtn {
+  vertical-align: top !important;
+}
+.dashboard{
+  display: block;
+  margin: 0px auto;
+  padding: 0px;
+  border: 0px;
+}

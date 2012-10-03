@@ -1,0 +1,5 @@
+table.table.table-bordered
+  tr(ng-repeat='p in persons' ,ng-class='{success: $index%4==0, error: $index%4==1, warning: $index%4==2, info: $index%4==3}')
+    td {{p.id}}
+    td(ng-repeat='s in p.scores') {{s}}
+    td {{p.date}}

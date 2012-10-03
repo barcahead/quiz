@@ -1,0 +1,13 @@
+legend Congratulations!
+form.form-horizontal(ng-submit='mstrApply()')
+  .control-group
+    label.control-label Apply ID
+    .controls
+      input(type='text' , ng-model='applyID' ,required)
+  .control-group
+    .controls
+      input.btn.btn-primary(type='submit' ,value='submit')
+
+.alert.alert-error.hint(ng-show='token==0||token==-1') 
+  strong(ng-show='token==0') Incorrect! Please try again.
+  strong(ng-show='token==-1') Oh snap! Server error.

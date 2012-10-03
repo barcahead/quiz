@@ -1,0 +1,31 @@
+.hero-unit
+  h1(align='center') How many combinations do iPhone and Android 9-point-unlock have?
+
+.alert.alert-block.alert-success.rule
+  h4 Pay attention!
+  |We impose these conditions on patterns for Android:
+  |Each pattern must connect at least 
+  strong two 
+  |dots.
+  |The dots in the pattern must all be distinct.
+  |If the line segment connecting any two consecutive dots in the pattern passes through any other dots, the other dots must have previously been in the pattern.
+
+.lock
+  form
+  ul.thumbnails
+    li.span4
+      .thumbnail
+        img(src='{{android}}')
+    li.span4
+      .thumbnail
+        img(src='{{iphone}}')
+
+  hr
+  form.form-inline(ng-submit='validate()')
+    input.span2(type='number' ,ng-model='androidComb' ,placeholder='Android' ,required) android
+    input.span2(type='number' ,ng-model='iphoneComb' ,placeholder='iPhone' ,required) iPhone
+    input.btn.btn-primary(type='submit' ,value='submit')
+
+.alert.alert-error.hint(ng-show='token==0||token==-1') 
+  strong(ng-show='token==0') Incorrect! Please try again.
+  strong(ng-show='token==-1') Oh snap! Server error.

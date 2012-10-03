@@ -1,0 +1,51 @@
+.hero-unit
+  h1(align='center') Can you win against our robot?
+
+.alert.alert-block.rule
+  h4 Rule
+  |You need to play with our robot on a 3X3 grid; You will go first to put number 1 ~ 9 to the grid without reusing any number.
+  |After all numbers put in, your final score will be sum of row A and row C, robot's score will be a sum of column 1 and column 3.
+  |You can pass only if you can win our robot.
+
+.match
+  table.table
+    tr
+      td
+      td 1
+      td 2
+      td 3
+    tr
+      td A
+      td
+        span.badge(robot-droppable idx='1') {{state[1]}}
+      td
+        span.badge(robot-droppable idx='2') {{state[2]}}
+      td
+        span.badge(robot-droppable idx='3') {{state[3]}}
+    tr
+      td B
+      td
+        span.badge(robot-droppable idx='4') {{state[4]}}
+      td
+        span.badge(robot-droppable idx='5') {{state[5]}}
+      td
+        span.badge(robot-droppable idx='6') {{state[6]}}
+    tr
+      td C
+      td
+        span.badge(robot-droppable idx='7') {{state[7]}}
+      td
+        span.badge(robot-droppable idx='8') {{state[8]}}
+      td
+        span.badge(robot-droppable idx='9') {{state[9]}}
+
+  .numPile
+    span.badge.number(robot-draggable ng-repeat='number in numbers') {{number}}
+
+  .robotBtnDiv
+    a.btn.btn-primary(ng-click='refresh()') Reset
+    a.btn.btn-primary(ng-click='validate()') Submit
+
+.alert.alert-error.hint(ng-show='token==0||token==-1') 
+  strong(ng-show='token==0') You lose! Please try again.
+  strong(ng-show='token==-1') Oh snap! Server error.

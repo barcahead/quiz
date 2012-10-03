@@ -1,0 +1,21 @@
+.hero-unit
+  h1(align='center') Map logo to MSTR owed Apps
+  .prods
+    img.img-rounded(src='{{prods}}')
+
+#logoSlots
+  .slot(logo-droppable idx='{{$index}}' ,ng-repeat='slot in slots') {{slot}}
+
+.alert.alert-info.rule
+   h4 Please drag the following logos to the slots above.
+
+#logoPile
+  .logo(logo-draggable idx='{{$index}}' ,ng-repeat='logo in logos')
+    img.img-rounded(src='{{logo}}')
+
+.btnDiv
+  .btn.btn-primary(ng-click='validate()') Submit
+
+.alert.alert-error.hint(ng-show='token==0||token==-1') 
+  strong(ng-show='token==0') Incorrect! Please try again.
+  strong(ng-show='token==-1') Oh snap! Server error.

@@ -1,0 +1,19 @@
+.hero-unit
+  h1(align='center') A cipher in the chart. Each line in the chart represents a character. Can you find the answer?
+
+table.table.table-bordered
+  tr(ng-repeat='r in chart' ,ng-class='{success: $index%4==0, error: $index%4==1, warning: $index%4==2, info: $index%4==3}')
+    td {{$index+1}}
+    td(ng-repeat='elm in r') {{elm}}
+
+.alert.alert-error
+  strong Hints: 
+  |All roads lead to somewhere...
+
+form.form-inline(ng-submit='validate()')
+    input.span2(type='text' ,ng-model='cipher' ,required) android
+    input.btn.btn-primary(type='submit' ,value='submit')
+
+.alert.alert-error.hint(ng-show='token==0||token==-1') 
+  strong(ng-show='token==0') Incorrect! Please try again.
+  strong(ng-show='token==-1') Oh snap! Server error.
