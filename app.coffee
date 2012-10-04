@@ -2,7 +2,6 @@ express = require 'express'
 require './routes/db'
 routes = require './routes'
 api = require './routes/api'
-#socket = require './routes/socket'
 
 app = module.exports = express.createServer()
 
@@ -34,5 +33,3 @@ app.get '*', routes.index
 server = app.listen 3000, ->
   console.log 'Express Server listening on port %d', 3000
 
-io = require('socket.io').listen server
-#io.sockets.on 'connection', socket

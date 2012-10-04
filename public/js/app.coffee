@@ -1,4 +1,4 @@
-angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
+angular.module('myApp', ['myApp.services', 'myApp.directives']).
   config ['$routeProvider', ($routeProvider) ->
     $routeProvider.when '/welcome', {
       templateUrl: 'partials/welcome'
@@ -37,7 +37,7 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
 
     $routeProvider.when '/cloud1', {
       templateUrl: 'partials/cloud1'
-      controller: cloud1Ctrl
+      controller: Cloud1Ctrl
     }
 
     $routeProvider.otherwise {

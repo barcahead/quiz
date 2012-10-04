@@ -107,7 +107,7 @@
     .error (data) ->
       $scope.token = -1
 
-@cloud1Ctrl = ($scope, $http) ->
+@Cloud1Ctrl = ($scope, $http) ->
   $scope.ans = ('' for v in [0..3])
   $scope.ans[3] = {}
   $scope.validate = () ->
@@ -141,3 +141,12 @@
 
 @AppCtrl = ($scope) ->
   $scope.tokens = {}
+
+@LogoCtrl.$inject = ['$scope', '$http', '$location']
+@LockCtrl.$inject = ['$scope', '$http', '$location']
+@RobotCtrl.$inject = ['$scope', '$http', '$location', '$route']
+@CipherCtrl.$inject = ['$scope', '$http', '$location']
+@ApplyCtrl.$inject = ['$scope', '$http', '$location']
+@Cloud1Ctrl.$inject = ['$scope', '$http']
+@AdminCtrl.$inject = ['$scope', '$http', '$location']
+@AppCtrl.$inject = ['$scope']
