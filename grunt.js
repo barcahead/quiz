@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     copy: {
       prod: {
         files: {
-          'prod/node_modules/': 'node_modules/**',
+          //'prod/node_modules/': 'node_modules/**',
           'prod/views/': 'views/**',
           'prod/public/bootstrap/': 'public/bootstrap/**',
           'prod/public/css/': 'public/css/**',

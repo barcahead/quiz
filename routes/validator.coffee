@@ -5,11 +5,12 @@ KEY = ('Long live Michael Saylor').toString 'ascii'
 PAGES = ['logo', 'lock', 'robot', 'cipher', 'apply']
 
 INTERVAL = 1000*60*60
-exports.cipher = (pg) ->
+exports.cipher = (pg, ip) ->
   cipher = crypto.createCipher 'blowfish', KEY
 
   encripted = cipher.update pg+'|', 'utf8', 'hex'
   encripted += cipher.update (new Date()).getTime().toString(), 'utf8', 'hex'
+  encripted += cipher.update '|'+ip, 'utf8', 'hex'
 
   encripted += cipher.final 'hex'
 
@@ -20,12 +21,12 @@ exports.validate = (token, curP) ->
   decrypted = decipher.update token, 'hex', 'utf8'
   decrypted += decipher.final 'utf8'
   text = decrypted.split '|'
-  if text.length == 2
+  if text.length == 3
     prevP = text[0]
     prevTime = Number text[1]
     curTime = Number (new Date()).getTime().toString()
     for pg, i in PAGES
-      if pg is prevP and i+1<PAGES.length and PAGES[i+1] is curP and curTime-prevTime < INTERVAL
+      if pg is prevP and i+1<PAGES.length and PAGES[i+1] is curP and curTime-prevTime > 0 and curTime-prevTime < INTERVAL
         return true
     false
   else false

@@ -9,6 +9,10 @@ Person = new Schema {
     type: String
     required: true
     unique: true
+  token:
+    type: String
+    required: true
+    unique: true
   date: 
     type: Date
     required: true

@@ -32,7 +32,7 @@ exports.checkAnswer = (req, res) ->
 
   if pg is 'logo' or validator.validate token, pg
     res.json
-      token: if pg of fnList and fnList[pg] ans then validator.cipher pg else 0
+      token: if pg of fnList and fnList[pg] ans then validator.cipher pg, req.ip else 0
   else 
     res.json
       token: -1
@@ -46,6 +46,7 @@ exports.mstrApply = (req, res) ->
     person = new Person
       id: req.params.id
       date: (new Date()).getTime()
+      token: token
 
     person.save (err) ->
       res.json 

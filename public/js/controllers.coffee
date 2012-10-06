@@ -31,6 +31,9 @@
   $scope.android = 'image/android.png'
   $scope.iphone = 'image/iphone.png'
 
+  unless 'logo' in $scope.$parent.tokens
+    $location.url '/welcome'
+
   $scope.validate = () ->
     $http.post '/api/checkAnswer/lock',
       token: $scope.$parent.tokens['logo']
@@ -48,6 +51,9 @@
   $scope.numbers = [1..9]
   $scope.state = (0 for i in [0..9])
   $scope.moves = []
+
+  unless 'lock' in $scope.$parent.tokens
+    $location.url '/welcome'
 
   $scope.refresh = () ->
     $route.reload()
@@ -80,6 +86,9 @@
     ['D', 'R', 'R', 'R', 'U', 'L'] #E
   ]
 
+  unless 'robot' in $scope.$parent.tokens
+    $location.url '/welcome'
+
   $scope.validate = () ->
     $http.post '/api/checkAnswer/cipher',
       token: $scope.$parent.tokens['robot'] 
@@ -94,6 +103,10 @@
       $scope.token = -1
 
 @ApplyCtrl = ($scope, $http, $location) ->
+
+  unless 'cipher' in $scope.$parent.tokens
+    $location.url '/welcome'
+
   $scope.mstrApply = () ->
     $http.post '/api/Apply/'+$scope.applyID,
       token: $scope.$parent.tokens['cipher']
@@ -139,8 +152,12 @@
 
 @IndexCtrl = () ->
 
-@AppCtrl = ($scope) ->
+@AppCtrl = ($scope, $location) ->
   $scope.tokens = {}
+  curUrl = $location.url()
+  forbid = ['/logo', '/lock', '/robot', '/cipher', '/apply']
+  if curUrl in forbid then $location.url '/welcome'
+
 
 @LogoCtrl.$inject = ['$scope', '$http', '$location']
 @LockCtrl.$inject = ['$scope', '$http', '$location']
@@ -149,4 +166,4 @@
 @ApplyCtrl.$inject = ['$scope', '$http', '$location']
 @Cloud1Ctrl.$inject = ['$scope', '$http']
 @AdminCtrl.$inject = ['$scope', '$http', '$location']
-@AppCtrl.$inject = ['$scope']
+@AppCtrl.$inject = ['$scope', '$location']
