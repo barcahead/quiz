@@ -31,7 +31,7 @@
   $scope.android = 'image/android.png'
   $scope.iphone = 'image/iphone.png'
 
-  unless 'logo' in $scope.$parent.tokens
+  unless 'logo' of $scope.$parent.tokens
     $location.url '/welcome'
 
   $scope.validate = () ->
@@ -52,7 +52,7 @@
   $scope.state = (0 for i in [0..9])
   $scope.moves = []
 
-  unless 'lock' in $scope.$parent.tokens
+  unless 'lock' of $scope.$parent.tokens
     $location.url '/welcome'
 
   $scope.refresh = () ->
@@ -86,7 +86,7 @@
     ['D', 'R', 'R', 'R', 'U', 'L'] #E
   ]
 
-  unless 'robot' in $scope.$parent.tokens
+  unless 'robot' of $scope.$parent.tokens
     $location.url '/welcome'
 
   $scope.validate = () ->
@@ -104,7 +104,7 @@
 
 @ApplyCtrl = ($scope, $http, $location) ->
 
-  unless 'cipher' in $scope.$parent.tokens
+  unless 'cipher' of $scope.$parent.tokens
     $location.url '/welcome'
 
   $scope.mstrApply = () ->
