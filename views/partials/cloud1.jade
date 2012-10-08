@@ -6,11 +6,15 @@ form(ng-submit='validate()')
     |to analyze the data and provide the answer at the provided box.
     |Click “Submit” button once you provide the answer to all questions.
 
-  iframe.dashboard(src='https://my.microstrategy.com/MicroStrategy/servlet/mstrWeb?RRUid=1133722&authMode=8&connMode=8&aliveDenyGuest=true&evt=3135&src=mstrWeb.3135&documentID=E3F171A411E205F81B7B00802F976E2B&currentViewMedia=8', height='650px', width='1024px', scrolling='no')
+    .tips
+      tipcarousel(tips='tips')
+
+
+  iframe.dashboard(src='https://my.microstrategy.com/MicroStrategy/servlet/mstrWeb?RRUid=1133722&authMode=8&connMode=8&aliveDenyGuest=true&evt=3135&src=mstrWeb.3135&documentID=E3F171A411E205F81B7B00802F976E2B&currentViewMedia=8', height='800px', width='1200px', scrolling='no')
 
   hr
   
-  label 1. Among top 10% countries that participated in most sports in Summer Olympic Games, which country has the worst performance (fewest gold medals are earned per participant per game)?
+  label 1. Among the top 5% countries that have participated in most Summer Olympic Games, which country has the second highest percentage of Gold Medals?
   input(type='text', placeholder='Type the country name', ng-model='ans[0]', required)
   
   label 2. Among countries that began to participate in Winter Olympic Games since the first quarter of 20th century, which country has the best performance (most gold medals are earned per participant per game)?

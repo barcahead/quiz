@@ -2,6 +2,7 @@ express = require 'express'
 require './routes/db'
 routes = require './routes'
 api = require './routes/api'
+connect = require 'connect'
 
 app = module.exports = express.createServer()
 
@@ -13,6 +14,7 @@ app.configure ->
   }
   app.use express.bodyParser()
   app.use express.methodOverride()
+  app.use connect.compress()
   app.use express.static(__dirname + '/public')
 
 app.configure 'development', ->

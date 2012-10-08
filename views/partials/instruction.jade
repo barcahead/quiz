@@ -1,0 +1,8 @@
+#myCarousel.carousel.slide
+  .carousel-inner
+    div(ng-class='{item:true, active:$first}', ng-repeat='tip in tips')
+      img(ng-src='{{tip.url}}')
+      .carousel-caption
+        p '{{tip.t}}'
+  a.carousel-control.left(href='#myCarousel', data-slide='prev') &lsaquo;
+  a.carousel-control.right(href='#myCarousel', data-slide='next') &rsaquo;

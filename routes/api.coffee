@@ -65,7 +65,7 @@ exports.cloudAnswer = (req, res) ->
       doc.rounds = doc.rounds | (1<<roundID)
       point = 0
       correct = 0
-      if ans[0].toLowerCase() is 'mexico' 
+      if ans[0].toLowerCase() is 'italy' 
         point |= (1<<1)
         correct++
       if ans[1].toLowerCase() is 'norway' 
@@ -80,7 +80,9 @@ exports.cloudAnswer = (req, res) ->
       doc.markModified 'points'
 
       doc.save (err) ->
-        res.json {msg: if err then 'Server internal error!' else 'Your answers has been saved!'}
+        res.json 
+          msg: if err then 'Server internal error!' else 'Your answers has been saved!'
+          state: if err then false else true
 
 
 exports.persons = (req, res) ->

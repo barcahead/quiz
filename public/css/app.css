@@ -138,3 +138,19 @@ form input {
   padding: 0px;
   border: 0px;
 }
+
+.tips {
+  margin: 10px auto;
+  width: 800px;
+}
+
+.carousel .item {
+  height: 400px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

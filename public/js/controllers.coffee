@@ -120,7 +120,14 @@
     .error (data) ->
       $scope.token = -1
 
-@Cloud1Ctrl = ($scope, $http) ->
+@Cloud1Ctrl = ($scope, $http, $location) ->
+  $scope.tips = [
+    {url:'image/t1.png', t:'Use the provided charts to analyze the data. Click the chart tab to switch from one chart to the other.'}
+    {url:'image/t2.png', t:'For each chart, you can scroll to the right-left and up-bottom to see the complete data.'}
+    {url:'image/t3.png', t:'For each chart, you can put you mouse cursor on the name and modify the filter to change the data.'}
+    {url:'image/t4.png', t:'Hould your left mouse click and drag or press the ctrl key and click the thumb to change the value.'}
+    {url:'image/t5.png', t:'If you do not answer the questions for a while and see this page, please refresh the website.'}
+  ]
   $scope.ans = ('' for v in [0..3])
   $scope.ans[3] = {}
   $scope.validate = () ->
@@ -129,6 +136,7 @@
       applyID: $scope.applyID
     .success (data) ->
       $scope.msg = data.msg
+      if data.state then $location.url '/cong'
     .error (data) ->
       $scope.msg = data.msg
 
@@ -164,6 +172,6 @@
 @RobotCtrl.$inject = ['$scope', '$http', '$location', '$route']
 @CipherCtrl.$inject = ['$scope', '$http', '$location']
 @ApplyCtrl.$inject = ['$scope', '$http', '$location']
-@Cloud1Ctrl.$inject = ['$scope', '$http']
+@Cloud1Ctrl.$inject = ['$scope', '$http', '$location']
 @AdminCtrl.$inject = ['$scope', '$http', '$location']
 @AppCtrl.$inject = ['$scope', '$location']

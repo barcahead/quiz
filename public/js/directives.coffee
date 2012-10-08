@@ -182,3 +182,12 @@ robotMove = (S, uiCb) ->
     else 
       putA S, M, MIN
     uiCb and uiCb S
+
+directives.directive 'tipcarousel', () ->
+  templateUrl: 'partials/instruction'
+  # template: '<div/>'
+  restrict: 'EAC'
+  link: (scope, element, attr) ->
+    scope.tips = scope.$eval attr.tips
+    $(element).carousel 
+      interval: 0

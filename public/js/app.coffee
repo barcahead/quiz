@@ -40,6 +40,10 @@ angular.module('myApp', ['myApp.services', 'myApp.directives']).
       controller: Cloud1Ctrl
     }
 
+    $routeProvider.when '/cong', {
+      templateUrl: 'partials/cong'
+    }
+
     $routeProvider.otherwise {
       redirectTo: '/welcome'
     }
