@@ -125,7 +125,7 @@
     {url:'image/t1.png', t:'Use the provided charts to analyze the data. Click the chart tab to switch from one chart to the other.'}
     {url:'image/t2.png', t:'For each chart, you can scroll to the right-left and up-bottom to see the complete data.'}
     {url:'image/t3.png', t:'For each chart, you can put you mouse cursor on the name and modify the filter to change the data.'}
-    {url:'image/t4.png', t:'Hould your left mouse click and drag or press the ctrl key and click the thumb to change the value.'}
+    {url:'image/t4.png', t:'Hold your left mouse click and drag or press the ctrl key and click the thumb to change the value.'}
     {url:'image/t5.png', t:'If you do not answer the questions for a while and see this page, please refresh the website.'}
   ]
   $scope.ans = ('' for v in [0..3])
