@@ -120,6 +120,9 @@
     .error (data) ->
       $scope.token = -1
 
+  $scope.cloud = () ->
+    $location.url '/cloud1'
+
 @Cloud1Ctrl = ($scope, $http, $location) ->
   $scope.tips = [
     {url:'image/t1.png', t:'Use the provided charts to analyze the data. Click the chart tab to switch from one chart to the other.'}

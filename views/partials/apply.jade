@@ -1,4 +1,11 @@
 legend Congratulations!
+
+|If you have already submitted your ID before, please 
+a(ng-click='cloud()') click here
+|&nbsp;to go to the last question.
+
+hr
+
 form.form-horizontal(ng-submit='mstrApply()')
   .control-group
     label.control-label Apply ID
@@ -7,6 +14,7 @@ form.form-horizontal(ng-submit='mstrApply()')
   .control-group
     .controls
       input.btn.btn-primary(type='submit' ,value='submit')
+
 
 .alert.alert-error.hint(ng-show='token==0||token==-1') 
   strong(ng-show='token==0') Incorrect! Please try again.
